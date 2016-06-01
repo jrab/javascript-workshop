@@ -1,0 +1,23 @@
+{
+  "name": "javascript-workshop",
+  "version": "1.0.0",
+  "description": "Javascript Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrab/javascript-workshop.git"
+  },
+  "author": "Joynal Rab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrab/javascript-workshop/issues"
+  },
+  "homepage": "https://github.com/jrab/javascript-workshop#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1"
+  }
+}

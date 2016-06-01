@@ -1,0 +1,21 @@
+{
+  "name": "javascript-workshop",
+  "description": "Javascript Workshop",
+  "main": "index.js",
+  "authors": [
+    "Joynal Rab"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.6"
+  }
+}
