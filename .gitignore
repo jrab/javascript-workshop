@@ -27,3 +27,6 @@ build
 
 #vendor files
 app/assets/js/vendor
+
+#dist
+dist
