@@ -1,6 +1,6 @@
-var weatherApp = angular.module('studentApp', []);
+var studentApp = angular.module('studentApp', []);
 
-weatherApp
+studentApp
 	.service('studentService', function () {
 
 		this.students = [ { firstName: 'Jada', lastName: 'Bayless', age: 21 },
@@ -38,7 +38,7 @@ weatherApp
 		}
 	});
 
-weatherApp
+studentApp
 	.controller('studentController', function ($scope, studentService) {
 	
 		$scope.student = studentService.getStudent(15);
@@ -51,20 +51,3 @@ weatherApp
 			templateUrl: 'partials/student.html'
 		}
 	});
-
-weatherApp
-	.controller('studentListController', function ($scope, studentService) {
-	
-		$scope.students = studentService.getStudents();
-	})
-	.directive('students', function () {
-
-		return {
-
-			restrict: 'E',
-			templateUrl: 'partials/studentList.html'
-		}
-	});
-
-
-	
