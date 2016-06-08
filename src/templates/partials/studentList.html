@@ -1,0 +1,6 @@
+<div ng-controller="studentListController">
+	Search: <input type = "text" ng-model = "search">
+	<ul ng-repeat="student in students | filter: search | orderBy: 'firstName'">
+		<li ng-if="student.age > 20">{{student.firstName}} {{student.lastName}} [age: {{student.age}}]</li>
+	</ul>
+</div>
