@@ -44,4 +44,4 @@ gulp.task('watch', function () {
 	gulp.watch('src/javascript/**/*', ['javascript']);
 });
 
-gulp.task('default', ['browser-sync', 'bower', 'watch']);
+gulp.task('default', ['bower', 'styles', 'javascript', 'templates', 'watch', 'browser-sync']);
