@@ -1,28 +1,27 @@
 
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ui.router']);
 
 // configure our routes
-myApp.config(function($routeProvider) {
-	$routeProvider
-
-		// route for the home page
-		.when('/', {
-			templateUrl : 'partials/home.html',
-			controller  : 'mainController'
+myApp.config(function($stateProvider, $urlRouterProvider) {
+	
+	$urlRouterProvider.otherwise('/home');
+	
+	$stateProvider
+		
+		// HOME STATES AND NESTED VIEWS ========================================
+		.state('home', {
+			url: '/home',
+			templateUrl: 'partials/home.html',
+			controller: 'mainController'
 		})
-
-		// route for the about page
-		.when('/about', {
-			templateUrl : 'partials/about.html',
-			controller  : 'aboutController'
-		})
-
-		// route for the contact page
-		.when('/contact', {
-			templateUrl : 'partials/contact.html',
-			controller  : 'contactController'
+		
+		// ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+		.state('about', {
+			// we'll get to this in a bit       
 		});
+		
 });
+
 
 myApp.controller('mainController', function($scope) {
 
