@@ -1,10 +1,22 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass 		= require('gulp-sass');
+var del 		= require('del');
 
 var vendorJSFiles = [ 	'bower_components/angular/angular.min.js',
+						'bower_components/angular-route/angular-route.min.js',
 						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js' ];
-var vendorCSSFiles = [ 'bower_components/bootstrap/dist/css/bootstrap.min.css' ];
+
+var vendorCSSFiles = [ 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
+						'bower_components/components-font-awesome/css/font-awesome.min.css' ];
+
+var vendorFontFiles = [ 'bower_components/components-font-awesome/fonts/*' ];
+
+// clear dist folder
+
+gulp.task('clean', function (cb) {
+	del.sync(['dist'], cb);
+});
 
 // Static server
 gulp.task('browser-sync', function() {
@@ -13,6 +25,8 @@ gulp.task('browser-sync', function() {
             baseDir: "./dist/"
         }
     });
+
+    gulp.watch('src/**/*').on('change', browserSync.reload);
 });
 
 gulp.task('styles', function () {
@@ -40,6 +54,9 @@ gulp.task('bower', function () {
 
 	gulp.src(vendorCSSFiles)
 		.pipe(gulp.dest('dist/assets/css/vendor/'));
+
+	gulp.src(vendorFontFiles)
+		.pipe(gulp.dest('dist/assets/css/fonts/'));
 });
 
 gulp.task('watch', function () {
@@ -49,4 +66,4 @@ gulp.task('watch', function () {
 	gulp.watch('src/javascript/**/*', ['javascript']);
 });
 
-gulp.task('default', ['bower', 'styles', 'javascript', 'templates', 'watch', 'browser-sync']);
+gulp.task('default', ['clean', 'bower', 'styles', 'javascript', 'templates', 'watch', 'browser-sync']);
