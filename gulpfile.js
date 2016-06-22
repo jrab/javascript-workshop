@@ -2,7 +2,9 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass 		= require('gulp-sass');
 
-var vendorFiles = [ 'bower_components/angular/angular.min.js' ];
+var vendorJSFiles = [ 	'bower_components/angular/angular.min.js',
+						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js' ];
+var vendorCSSFiles = [ 'bower_components/bootstrap/dist/css/bootstrap.min.css' ];
 
 // Static server
 gulp.task('browser-sync', function() {
@@ -33,8 +35,11 @@ gulp.task('javascript', function () {
 
 gulp.task('bower', function () {
 
-	gulp.src(vendorFiles)
+	gulp.src(vendorJSFiles)
 		.pipe(gulp.dest('dist/assets/js/vendor/'));
+
+	gulp.src(vendorCSSFiles)
+		.pipe(gulp.dest('dist/assets/css/vendor/'));
 });
 
 gulp.task('watch', function () {

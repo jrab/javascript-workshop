@@ -1,4 +1,4 @@
-var studentApp = angular.module('studentApp', []);
+var studentApp = angular.module('studentApp', ['ui.bootstrap']);
 
 studentApp
 	.service('studentService', function () {
@@ -42,6 +42,14 @@ studentApp
 	.controller('studentController', function ($scope, studentService) {
 	
 		$scope.student = studentService.getStudent(15);
+
+		  $scope.bigData = {};
+		  
+		  $scope.bigData.breakfast = false;
+		  $scope.bigData.lunch = false;
+		  $scope.bigData.dinner = false;
+
+		$scope.isCollapsed = false;
 	})
 	.directive('student', function () {
 
