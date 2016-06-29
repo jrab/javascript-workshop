@@ -4,7 +4,7 @@ var sass 		= require('gulp-sass');
 var del 		= require('del');
 
 var vendorJSFiles = [ 	'bower_components/angular/angular.min.js',
-						// 'bower_components/angular-route/angular-route.min.js',
+						'bower_components/angular-ui-router/release/angular-ui-router.min.js',
 						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js' ];
 
 var vendorCSSFiles = [ 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
