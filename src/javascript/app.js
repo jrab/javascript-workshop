@@ -23,9 +23,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		});
 });
 
-myApp.controller('mainController', function($scope) {
-});
-
 myApp.controller('homeController', function($scope) {
 
 	$scope.message = "Welcome to the home page";
