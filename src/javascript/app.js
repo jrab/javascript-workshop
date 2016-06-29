@@ -3,39 +3,44 @@ var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.otherwise('/home');
+	$urlRouterProvider.otherwise('/listing');
 
 	$stateProvider
-		.state('home', {
-			url: '/home',
-			templateUrl : 'partials/home.html',
-			controller  : 'homeController'
+		.state('listing', {
+			url: '/listing',
+			templateUrl : 'partials/listing.html',
+			controller  : 'listingController'
 		})
-		.state('about', {
-			url: '/about',
-			templateUrl : 'partials/about.html',
-			controller  : 'aboutController'
+		.state('detail', {
+			url: '/detail',
+			templateUrl : 'partials/detail.html',
+			controller  : 'detailController'
 		})
-		.state('contact', {
-			url: '/contact',
-			templateUrl : 'partials/contact.html',
-			controller  : 'contactController'
-		});
 });
 
-myApp.controller('homeController', function($scope) {
+myApp.service('listingService', function ($http) {
 
-	$scope.message = "Welcome to the home page";
+	return {
+		async: function() {
+			return $http.get('data/product-listing.json');  //1. this returns promise
+		}
+	};
 });
 
-myApp.controller('aboutController', function($scope) {
+myApp.controller('listingController', function($scope, listingService) {
 
-	$scope.message = "Something about us.";
+	$scope.items = [];
+
+	listingService.async().then(function (data) {
+
+		$scope.items = data.data.items;
+	});
+
+	$scope.message = "Welcome to the listing page";
 });
 
-myApp.controller('contactController', function($scope) {
+myApp.controller('detailController', function($scope) {
 
-	$scope.message = "Contact me at jrabcs@bhphoto.com";
+	$scope.message = "Welcome to the detail page.";
 });
-
 

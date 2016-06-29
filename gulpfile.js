@@ -12,6 +12,8 @@ var vendorCSSFiles = [ 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
 
 var vendorFontFiles = [ 'bower_components/components-font-awesome/fonts/*' ];
 
+var dataFiles = [ 'data/*' ];
+
 // clear dist folder
 
 gulp.task('clean', function (cb) {
@@ -59,6 +61,12 @@ gulp.task('bower', function () {
 		.pipe(gulp.dest('dist/assets/css/fonts/'));
 });
 
+gulp.task('data-files', function () {
+
+	gulp.src(dataFiles)
+		.pipe(gulp.dest('dist/data/'));
+});
+
 gulp.task('watch', function () {
 
 	gulp.watch('src/sass/**/*', ['styles']);
@@ -66,4 +74,4 @@ gulp.task('watch', function () {
 	gulp.watch('src/javascript/**/*', ['javascript']);
 });
 
-gulp.task('default', ['clean', 'bower', 'styles', 'javascript', 'templates', 'watch', 'browser-sync']);
+gulp.task('default', ['clean', 'bower', 'data-files', 'styles', 'javascript', 'templates', 'watch', 'browser-sync']);
