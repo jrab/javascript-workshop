@@ -6,7 +6,8 @@ var del 		= require('del');
 
 var vendorJSFiles = [ 	'bower_components/angular/angular.min.js',
 						'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js' ];
+						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+						'bower_components/underscore/underscore-min.js' ];
 
 var vendorCSSFiles = [ 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
 						'bower_components/components-font-awesome/css/font-awesome.min.css' ];

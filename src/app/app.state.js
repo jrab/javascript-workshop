@@ -13,7 +13,7 @@ angular.module('bhApp')
 			controllerAs: 'listing'
 		})
 		.state('detail', {
-			url: '/detail',
+			url: '/detail/:sku/:itemSource',
 			templateUrl: 'partials/detail/views/detail.view.html',
 			controller: 'detailController',
 			controllerAs: 'detail'

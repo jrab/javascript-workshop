@@ -23,6 +23,11 @@
 
 		vm.message = "Test Message";
 
+		vm.goToDetail = function (sku, itemSource) {
+
+			$state.go('detail', sku, itemSource);
+		};
+
 		return vm;
 	}	
 })();

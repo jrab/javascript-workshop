@@ -1,9 +1,14 @@
-
-<div class="jumbotron text-center">
-	<h1>Listing Page</h1>
-
+<div class="listing-page">
+	<ul class="listing-items">
+		<li ng-repeat="item in listing.items" class="item" ng-click="goToDetail(item.skuNo, 'item.itemSource');">
+			<div class="item-image">
+				<img ng-src="//static.bhphoto.com{{item.image.fileName}}" />
+			</div>
+			<div class="item-details">
+				<div class="item-description">{{item.shortDescription}}</div>
+				<div class="item-stock-message">{{item.stockMessage}}</div>
+				<div class="item-price">{{item.price}}</div>
+			</div>
+		</li>
+	</ul>
 </div>
-
-<ul>
-	<li ng-repeat="item in listing.items">{{item.shortDescription}}</li>
-</ul>
