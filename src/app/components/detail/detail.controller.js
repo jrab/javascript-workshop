@@ -4,11 +4,13 @@
 	angular.module('bhApp')
 		.controller('detailController', detailController);
 
-	detailController.$inject = ["$scope", "$http", "$window", "$q", "detailService"];
+	detailController.$inject = ["$scope", "$http", "$window", "$q", "$state", "detailService"];
 
-	function detailController($scope, $http, $window, $q, detailService) {
+	function detailController($scope, $http, $window, $q, $state, detailService) {
 
-		var vm = this;
+		var vm = this,
+			sku = $state.params.sku,
+			itemSource = $state.params.itemSource;
 
 		// real ajax calls
 		detailService.getProductData(sku, itemSource)

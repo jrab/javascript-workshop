@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('bhApp.listingServices', [])
-		.service('listingService', listingService);
+		.service('fetchDataService', fetchDataService);
 
-	listingService.$inject = ['$http', '$q'];
+	fetchDataService.$inject = ['$http', '$q'];
 
-	function listingService($http, $q) {
+	function fetchDataService($http, $q) {
 
 		var factory = {
 			//properties
