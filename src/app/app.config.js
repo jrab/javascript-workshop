@@ -6,4 +6,4 @@ underscore.factory('_', ['$window', function($window) {
 
 var bhApp = angular
 				.module('bhApp', 
-						['ui.router', 'bhApp.listingServices', 'bhApp.detailServices', 'underscore']);
+						['ui.router', 'bhApp.userServices', 'underscore']);

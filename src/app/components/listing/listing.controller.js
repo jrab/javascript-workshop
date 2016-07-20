@@ -4,32 +4,25 @@
 	angular.module('bhApp')
 		.controller('listingController', listingController);
 
-	listingController.$inject = ["$scope", "$http", "$window", "$q", "$state", "fetchDataService"];
+	listingController.$inject = ["$scope", "$http", "$window", "$q", "$state", "userService"];
 
-	function listingController($scope, $http, $window, $q, $state, fetchDataService) {
+	function listingController($scope, $http, $window, $q, $state, userService) {
 
 		var vm = this;
 
 		// real ajax calls
-		fetchDataService.getListingData()
+		userService.getUserList()
 			.then(function (data) {
 
-				vm.items = data.items;
+				vm.users = data.users;
 
 			}, function (error) {
 				
 				//handle error
 			});
 
-		vm.message = "Test Message";
-
 		vm.goToDetail = function (item) {
-			
-			var sku = item.skuNo,
-				itemSource = item.itemSource,
-				params = { sku: sku, itemSource: itemSource };
 
-			$state.go('detail', params);
 		};
 
 		return vm;

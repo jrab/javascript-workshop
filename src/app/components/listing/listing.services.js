@@ -1,23 +1,23 @@
 (function () {
 	'use strict';
 
-	angular.module('bhApp.listingServices', [])
-		.service('fetchDataService', fetchDataService);
+	angular.module('bhApp.userServices', [])
+		.service('getUserList', getUserList);
 
-	fetchDataService.$inject = ['$http', '$q'];
+	getUserList.$inject = ['$http', '$q'];
 
-	function fetchDataService($http, $q) {
+	function getUserList($http, $q) {
 
 		var factory = {
 			//properties
-			getListingData: getListingData
+			getUserList: getUserList
 		};
 
-		function getListingData() {
+		function getUserList() {
 
 			var defer = $q.defer();
 
-			$http.get('data/product-listing.json')
+			$http.get('data/users.json')
 				.then(function successCallback(response) {
 					defer.resolve(response.data);
 				}, function errorCallback(response) {
