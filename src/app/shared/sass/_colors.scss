@@ -1,0 +1,70 @@
+@import 'bourbon';
+
+// COLORS
+$black: #000000; // 22252a
+$white: #ffffff;
+
+// ACCENT COLORS
+$fern: #708f3f; // GREEN
+$scarlet: #990000; // RED
+$apricot: #ff9933; // ORANGE
+$hawaii: #0a92ca; // BLUE
+
+// BLUE SCALE
+$ice: #f5f8fa;
+$mist: #ecf1f6;
+$water: #d9e3ed;
+$night: #334455;
+
+$facebook: #3b5998;
+$twitter: #4099ff;
+$googleplus: #d34836;
+$pinterest: #c92228;
+$yahoomail: #7b0099;
+
+// GRAY PERCENT SCALE       Replaces this Color
+$gray80: tint($black, 20%); // Shale / 464646
+$gray70: tint($black, 30%); // B&H / 595959 / Slate / 696969
+$gray50: tint($black, 50%); // Whale / 787878 / 6a757e
+$gray40: tint($black, 60%); // NJ / 959595 / 959fa9 / 99a1aa
+$gray30: tint($black, 70%); // Vog / ACACAC / B2B2B2
+$gray10: tint($black, 90%); // Fog / efefef / f2f2f2
+$gray6: tint($black, 94%);
+$gray3: #e4e4e4;
+
+// ALPHA SCALE BACKGROUND COLORS
+$grayOpacity80: transparentize($black, .2);
+
+$headerColor: $fern;
+$errorColor: $apricot;
+
+// SELECTABLES
+$selectedColor: $fern;
+$selectedAccent: $white;
+$unselectedColor: $mist;
+$unselectedAccent: $night;
+$removedBackground: $gray50;
+$removedAccent: white;
+$removedLink: $apricot;
+
+// REMOVED
+$removedBackground: $gray50;
+$removedColor: $white;
+$removedLink: $apricot;
+
+// BUTTONS
+$buttonMain: $hawaii;
+$buttonLight: $mist;
+
+// TEXT
+$textPrimary: $black;
+$textAccent: $gray80;
+$textSecondary: $gray40;
+
+// ICONS
+$iconDefault: $gray50;
+
+// TOAST
+$darkBackground: $gray80;
+$toastText: $white;
+$toastLink: $apricot;

@@ -36,7 +36,9 @@ gulp.task('browser-sync', function() {
 gulp.task('styles', function () {
 	gulp.src('src/app/**/*.scss')
 		.pipe(concat('main.scss'))
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			includePaths: ['src/app/'].concat(require('node-bourbon').includePaths)
+		}).on('error', sass.logError))
 		.pipe(gulp.dest('dist/assets/css/'));
 });
 
