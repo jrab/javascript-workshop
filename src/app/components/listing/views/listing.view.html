@@ -1,6 +1,6 @@
 <div class="listing-page">
 	<ul class="listing-items">
-		<li ng-repeat="item in listing.items" class="item" ng-click="goToDetail()">
+		<li ng-repeat="item in listing.items" class="item" ng-click="listing.goToDetail(item)">
 			<div class="item-image">
 				<img ng-src="//static.bhphoto.com{{item.image.fileName}}" />
 			</div>

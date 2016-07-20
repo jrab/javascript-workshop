@@ -23,10 +23,10 @@
 
 		vm.message = "Test Message";
 
-		$scope.goToDetail = function () {
-
-			var sku = this.item.skuNo,
-				itemSource = this.item.itemSource,
+		vm.goToDetail = function (item) {
+			
+			var sku = item.skuNo,
+				itemSource = item.itemSource,
 				params = { sku: sku, itemSource: itemSource };
 
 			$state.go('detail', params);
