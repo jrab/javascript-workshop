@@ -13,6 +13,7 @@
 			getUserList: getUserList,
 			getUser: getUser,
 			deleteUser: deleteUser,
+			updateUser: updateUser,
 			data: []
 		};
 
@@ -64,6 +65,26 @@
 					user = _.findWhere(users, {id: id});
 
 				factory.data.users = _.without(factory.data.users, user);
+
+				defer.resolve(user);
+			});
+
+			return defer.promise;
+
+		}
+
+		function updateUser(userObject) {
+
+			var userId = userObject.id;
+
+			var defer = $q.defer();
+
+			factory.getUserList().then(function (data) {
+
+				var users = factory.data.users,
+					user = _.findWhere(users, {id: userId});
+
+				_.extend(user, userObject);
 
 				defer.resolve(user);
 			});
