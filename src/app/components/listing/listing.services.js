@@ -12,6 +12,7 @@
 			//properties
 			getUserList: getUserList,
 			getUser: getUser,
+			deleteUser: deleteUser,
 			data: []
 		};
 
@@ -24,7 +25,6 @@
 				defer.resolve(factory.data);
 
 			} else {
-
 
 				$http.get('data/users.json')
 					.then(function successCallback(response) {
@@ -54,7 +54,26 @@
 
 		}
 
+		function deleteUser(id) {
+
+			var defer = $q.defer();
+
+			factory.getUserList().then(function (data) {
+
+				var users = factory.data.users,
+					user = _.findWhere(users, {id: id});
+
+				factory.data.users = _.without(factory.data.users, user);
+
+				defer.resolve(user);
+			});
+
+			return defer.promise;
+
+		}
+
 		return factory;
 	}
 
 })();
+
