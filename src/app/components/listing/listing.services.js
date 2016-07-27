@@ -66,7 +66,7 @@
 
 				factory.data.users = _.without(factory.data.users, user);
 
-				defer.resolve(user);
+				defer.resolve(factory.data.users);
 			});
 
 			return defer.promise;
