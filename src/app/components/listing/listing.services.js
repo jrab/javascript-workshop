@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('bhApp.userServices', [])
-		.service('getUserList', getUserList);
+		.service('userService', userService);
 
-	getUserList.$inject = ['$http', '$q'];
+	userService.$inject = ['$http', '$q'];
 
-	function getUserList($http, $q) {
+	function userService($http, $q) {
 
 		var factory = {
 			//properties
