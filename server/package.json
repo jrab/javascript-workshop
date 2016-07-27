@@ -1,0 +1,16 @@
+{
+  "name": "template",
+  "description": "This is a template to start quickly your project",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "*",
+    "express": "*",
+    "json": "*",
+    "body-parser": "*",
+    "morgan": "*"
+  },
+  "devDependencies": {
+    "lokijs": "^1.4.1"
+  }
+}
