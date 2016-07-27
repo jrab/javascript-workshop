@@ -1,3 +1,14 @@
 <div class="detail-page">
-
+	<div class="detail-image">
+		<img ng-src="//static.bhphoto.com{{detail.item.image.fileName}}" />
+	</div>
+	<div class="detail-description">{{detail.item.shortDescription}}</div>
+	<div class="includes-free-wrap"></div>
+	<div class="detail-action-box">
+		<div class="detail-price">${{detail.item.price}}</div>
+		<div class="detail-add-to-cart">
+			<button><i class="fa fa-cart-plus"></i> Add To Cart</button>
+		</div>
+	</div>
+	<div class="detail-stock-info"></div>
 </div>

@@ -1,6 +1,59 @@
 @import 'shared/sass/colors';
 
+$defaultPadding: 0px 15px 15px 15px;
+
 .detail-page {
 
-	color: $hawaii;
+	.detail-image {
+
+		padding: $defaultPadding;
+
+		img {
+
+			display: block;
+			margin: auto;
+		}
+
+	}
+
+	.detail-description {
+
+		padding: $defaultPadding;
+	}
+
+	.detail-action-box {
+
+		padding: $defaultPadding;
+
+		padding-top: 15px;
+
+		background-color: $gray10;
+
+		.detail-price {
+
+			color: $fern;
+		}
+
+		.detail-add-to-cart {
+
+			margin-top: 10px;
+			
+			button {
+
+				background-color: $hawaii;
+				padding: 10px 15px;
+				color: white;
+				display: block;
+				width: 100%;
+
+				border: none;
+				border-radius: 2px;
+
+			}
+	}
 }
+
+
+
+
+

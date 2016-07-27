@@ -23,8 +23,6 @@
 				//handle error
 			});
 
-		vm.message = "Test Message";
-
 		return vm;
 	}	
 })();

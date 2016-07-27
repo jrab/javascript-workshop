@@ -29,7 +29,7 @@
 				itemSource = item.itemSource,
 				params = { sku: sku, itemSource: itemSource };
 
-			$state.go('detail', params);
+			$state.go('detail/' + sku + '/' + itemSource, params);
 		};
 
 		return vm;
