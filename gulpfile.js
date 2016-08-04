@@ -4,15 +4,15 @@ var sass 		= require('gulp-sass');
 var concat 		= require('gulp-concat');
 var del 		= require('del');
 
-var vendorJSFiles = [ 	'bower_components/angular/angular.min.js',
-						'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-						'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+var vendorJSFiles = [ 	'bower_components/react/react.js',
+						'bower_components/react/react-dom.js',
+						'bower_components/babel/browser.min.js',
+						'bower_components/remarkable/dist/remarkable.min.js',
 						'bower_components/underscore/underscore-min.js' ];
 
-var vendorCSSFiles = [ 	'bower_components/bootstrap/dist/css/bootstrap.min.css',
-						'bower_components/components-font-awesome/css/font-awesome.min.css' ];
+var vendorCSSFiles = [  ];
 
-var vendorFontFiles = [ 'bower_components/components-font-awesome/fonts/*' ];
+var vendorFontFiles = [  ];
 
 var dataFiles = [ 'data/*' ];
 
